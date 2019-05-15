@@ -1,6 +1,9 @@
 <h1>All Events</h1>
 <% @events.each do |event| %>
-  <p>Event: <b><%= event.name %></b></p><br>
+  <% if event.creator %>
+    <p>User: <b><%= event.creator.name %></b></p>
+    <p>Event: <b><%= event.name %></b></p><br>
+  <% end %>
 <% end %>
 <h1> Previous </h1>
 <% @previous_events.each do |eofa| %>

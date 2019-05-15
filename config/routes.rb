@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/login'  => 'sessions#new'
   post '/login'  => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+  post '/invite/:id' , to: 'users#invite'
 
   root 'users#new'
   resources :events, only: [:new, :create, :show, :index]
