@@ -24,11 +24,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def invite
-    @invited = User.find(params[:id])
-    puts @invited.name
-  end
-
   private
 
   def user_params

@@ -5,5 +5,4 @@ class Event < ApplicationRecord
 
   scope :past, -> {where("date < ?",Time.zone.now)}
   scope :future, -> {where("date > ?",Time.zone.now)}
-
 end

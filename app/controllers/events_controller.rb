@@ -27,6 +27,18 @@ class EventsController < ApplicationController
     @users = User.all
   end
 
+  def invite
+    p params
+    @event = Event.find_by(id: params[:data][:event_id])
+    @invited = User.find(params[:id])
+    if @event.users.push(@invited)
+      flash[:success] = "Invitation was sent."
+    else
+      flash[:danger] = "There was an error to send the invitation."
+    end
+    redirect_to @event
+  end
+
   def logged_in_user
    unless logged_in?
      flash[:danger] = 'Please log in first'

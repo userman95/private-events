@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_15_133539) do
+ActiveRecord::Schema.define(version: 2019_05_14_205153) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer "user_id"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2019_05_15_133539) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "invited"
   end
 
 end
