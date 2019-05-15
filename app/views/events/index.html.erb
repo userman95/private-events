@@ -1,4 +1,12 @@
 <h1>All Events</h1>
 <% @events.each do |event| %>
-  <%= event.name %><br>
+  <p>Event: <b><%= event.name %></b></p><br>
+<% end %>
+<h1> Previous </h1>
+<% @previous_events.each do |eofa| %>
+ <p><%= eofa.name %></p>
+<% end %>
+<h1> Upcoming </h1>
+<% @upcoming_events.each do |eofa| %>
+ <p><%= eofa.name %></p>
 <% end %>

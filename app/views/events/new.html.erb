@@ -1,13 +1,12 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <h2>Event Create Form</h2>
-      <%= form_for(:event, url: '/events', method: :post) do |f| %>
+<h2>Event Create Form</h2>
+<%= form_for(:event, url: '/events', method: :post) do |f| %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name,class: 'form-control' %>
+  <%= f.label :name %>
+  <%= f.text_field :name,class: 'form-control' %>
 
-        <%= f.submit 'Create Event',class: 'btn btn-primary' %>
+  <%= f.label :date %>
+  <%= f.date_field :date,class: 'form-control' %>
 
-      <% end %>
-  </div>
-</div>
+  <%= f.submit 'Create Event',class: 'btn btn-primary' %>
+
+<% end %>

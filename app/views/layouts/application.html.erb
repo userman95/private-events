@@ -10,9 +10,23 @@
   </head>
 
   <body>
-    <% flash.each do |message_type,message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-    <%= yield %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% flash.each do |message_type,message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+
+        <%= yield %>
+
+        <% if logged_in? %>
+          <%= link_to 'Create Event',new_event_path %><br>
+          <%= link_to 'Show all Events',events_path %><br>
+          <%= link_to "My Events", controller: "users", action: "show", id: current_user.id %><br>
+          <%= link_to 'Logout',logout_path,method: :delete %><br>
+        <% elsif !request.original_url.include?('login') %>
+          <%= link_to 'Log in',login_path %>
+        <% end %>
+      </div>
+    </div>
   </body>
 </html>

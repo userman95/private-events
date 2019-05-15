@@ -1,13 +1,9 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <h2>Sign up Form</h2>
-      <%= form_for(:user, url: '/signup', method: :post) do |f| %>
+<h2>Sign up Form</h2>
+  <%= form_for(:user, url: '/signup', method: :post) do |f| %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name,class: 'form-control' %>
+    <%= f.label :name %>
+    <%= f.text_field :name,class: 'form-control' %>
 
-        <%= f.submit 'Sign up',class: 'btn btn-primary' %>
+    <%= f.submit 'Sign up',class: 'btn btn-primary' %>
 
-      <% end %>
-  </div>
-</div>
+  <% end %>

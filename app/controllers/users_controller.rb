@@ -18,10 +18,24 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @users = User.all
+    if current_user
+      @upcoming_events = get_upcoming
+      @previous_events = get_previous
+    end
   end
+
+  private
 
   def user_params
     params.require(:user).permit(:name)
   end
+
+  def get_upcoming
+    current_user.attendances.where("created_at > ?",Time.zone.now)
+  end
+
+  def get_previous
+    current_user.attendances.where("created_at < ?",Time.zone.now)
+  end
+
 end
