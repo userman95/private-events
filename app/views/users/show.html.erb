@@ -1,14 +1,22 @@
-<h1> Events of <%= current_user.name %></h1>
-<% @user.events.each do |event| %>
-  <p><%= event.name %></p>
-<% end %>
-<h1> Previous </h1>
-<% @previous_events.each do |eofa| %>
-  <% eofa = Event.find_by(id: eofa.event_id)  %>
-  <p><%= eofa.name %></p>
-<% end %>
-<h1> Upcoming </h1>
-<% @upcoming_events.each do |eofa| %>
-  <% eofa = Event.find_by(id: eofa.event_id)  %>
-  <p><%= eofa.name %></p>
-<% end %>
+<div class="row">
+  <div class="col-md-3 ">
+    <h1> Previous </h1>
+      <% @previous_events.each do |eofa| %>
+        <% eofa = Event.find_by(id: eofa.event_id)  %>
+        <p><b><%= link_to eofa.name ,event_path(eofa)%></b></p><br>
+      <% end %>
+  </div>
+  <div class="col-md-6 ">
+    <h1 class="text-center">Events of <%= current_user.name %></h1>
+      <% @user.events.each do |event| %>
+      <p class="text-center"><b><%= link_to event.name ,event_path(event)%></b></p><br>
+      <% end %>
+  </div>
+  <div class="col-md-3 ">
+    <h1> Upcoming </h1>
+      <% @upcoming_events.each do |eofa| %>
+        <% eofa = Event.find_by(id: eofa.event_id)  %>
+        <p><b><%= link_to eofa.name ,event_path(eofa)%></b></p><br>
+      <% end %>
+  </div>
+</div>

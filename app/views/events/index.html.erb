@@ -1,15 +1,22 @@
-<h1>All Events</h1>
-<% @events.each do |event| %>
-  <% if event.creator %>
-    <p>User: <b><%= event.creator.name %></b></p>
-    <p>Event: <b><%= event.name %></b></p><br>
-  <% end %>
-<% end %>
-<h1> Previous </h1>
-<% @previous_events.each do |eofa| %>
- <p><%= eofa.name %></p>
-<% end %>
-<h1> Upcoming </h1>
-<% @upcoming_events.each do |eofa| %>
- <p><%= eofa.name %></p>
-<% end %>
+<div class="row">
+  <div class="col-md-3 ">
+    <h1> Previous </h1>
+      <% @previous_events.each do |eofa| %>
+        <p><b><%= link_to eofa.name ,event_path(eofa)%></b></p><br>
+      <% end %>
+  </div>
+  <div class="col-md-6 ">
+    <h1 class="text-center">All Events</h1>
+      <% @events.each do |event| %>
+        <% if event.creator %>
+          <p class="text-center"><b><%= link_to event.name ,event_path(event)%></b></p><br>
+        <% end %>
+      <% end %>
+  </div>
+  <div class="col-md-3 ">
+    <h1> Upcoming </h1>
+      <% @upcoming_events.each do |eofa| %>
+        <p><b><%= link_to eofa.name ,event_path(eofa)%></b></p><br>
+      <% end %>
+  </div>
+</div>

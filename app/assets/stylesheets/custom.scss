@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#available-users{
+  display: flex;
+  justify-content: space-between;
+  width: 158px;
+  margin-bottom: 7px;
+}
+#invite-users{
+  padding: 0;
+}
+#name-align{
+  margin: auto 0;
+}

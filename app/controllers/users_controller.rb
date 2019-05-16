@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       flash[:success] = 'Welcome'
       redirect_to controller: 'users', action: 'show', id: @user.id
     else
-      flash[:danger] = 'Username is taken'
+      render 'new'
     end
   end
 

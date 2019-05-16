@@ -28,7 +28,6 @@ class EventsController < ApplicationController
   end
 
   def invite
-    p params
     @event = Event.find_by(id: params[:data][:event_id])
     @invited = User.find(params[:id])
     if @event.users.push(@invited)
