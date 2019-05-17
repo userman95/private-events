@@ -40,5 +40,3 @@ Finally go to `http://localhost:3000/` in the web browser
 
 * [Orestis Kaplanis](https://github.com/userman95)
 * [Efrain Pinto](https://github.com/efrapp)
-
-## Contributors
