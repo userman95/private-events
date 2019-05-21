@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  include SessionsHelper
   
   before_action :logged_in_user, only: :create
 

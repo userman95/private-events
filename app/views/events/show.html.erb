@@ -17,10 +17,7 @@
                 <li id="available-users">
                   <span id="name-align"><%= user.name %></span>
                   <%= button_to( "Invite", action: 'invite', id: user.id, data: { event_id: @event.id }) %>
-                </li>
-              <% else %>
-                <p>Ops! No more users to invite</p>
-                <% break %>
+                </li>        
               <% end %>
           <% end %>
          </ul>

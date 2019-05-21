@@ -2,7 +2,6 @@
   <div class="col-md-3 ">
     <h1> Previous </h1>
       <% @previous_events.each do |eofa| %>
-        <% eofa = Event.find_by(id: eofa.event_id)  %>
         <p><b><%= link_to eofa.name ,event_path(eofa)%></b></p><br>
       <% end %>
   </div>
@@ -15,7 +14,6 @@
   <div class="col-md-3 ">
     <h1> Upcoming </h1>
       <% @upcoming_events.each do |eofa| %>
-        <% eofa = Event.find_by(id: eofa.event_id)  %>
         <p><b><%= link_to eofa.name ,event_path(eofa)%></b></p><br>
       <% end %>
   </div>

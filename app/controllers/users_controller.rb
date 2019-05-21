@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  include SessionsHelper
 
   def new
     @user = User.new
@@ -31,11 +30,11 @@ class UsersController < ApplicationController
   end
 
   def get_upcoming
-    current_user.attendances.where("created_at > ?",Time.zone.now)
+    current_user.events.where("date > ?",Time.zone.now)
   end
 
   def get_previous
-    current_user.attendances.where("created_at < ?",Time.zone.now)
+    current_user.events.where("date < ?",Time.zone.now)
   end
 
 end

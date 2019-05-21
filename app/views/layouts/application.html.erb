@@ -10,22 +10,29 @@
   </head>
 
   <body>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <% flash.each do |message_type,message| %>
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
-        <% end %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li><%= link_to 'Create Event',new_event_path %></li>
+            <li><%= link_to 'Show all Events',events_path %></li>
+            <li><%= link_to "My Events", controller: "users", action: "show", id: current_user.id %></li>
+            <li><%= link_to 'Logout',logout_path,method: :delete %></li>
+          <% end %>
+        </ul>
+      </div>
+  </header>
+   <div class="head">
+     <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <% flash.each do |message_type,message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
 
-        <%= yield %>
-
-        <% if logged_in? %>
-          <br>
-          <%= link_to 'Create Event',new_event_path %><br>
-          <%= link_to 'Show all Events',events_path %><br>
-          <%= link_to "My Events", controller: "users", action: "show", id: current_user.id %><br>
-          <%= link_to 'Logout',logout_path,method: :delete %><br>
-        <% end %>
+          <%= yield %>
+        </div>
       </div>
     </div>
+
   </body>
 </html>
