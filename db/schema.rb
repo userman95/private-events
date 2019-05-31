@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_05_17_101614) do
     t.datetime "updated_at", null: false
     t.date "date"
     t.integer "creator_id"
+    t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|

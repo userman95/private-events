@@ -1,0 +1,8 @@
+<% if current_user.id == event.creator_id %>
+ <div class="col-md-6 ">
+   <h2>Invite Users</h2>
+   <ul id="invite-users" >
+     <%= render partial: 'available_users', collection: users, as: :user %>
+   </ul>
+ </div>
+<% end %>

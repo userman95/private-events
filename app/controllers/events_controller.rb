@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  
+
   before_action :logged_in_user, only: :create
 
   def new
@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.create(creator_id: current_user.id,name: event_params[:name],date: event_params[:date])
+    @event = current_user.created_events.create(name: event_params[:name],date: event_params[:date])
     if @event.valid?
       flash[:success] = 'Event Created'
       redirect_to controller: 'events', action: 'show', id: @event.id
