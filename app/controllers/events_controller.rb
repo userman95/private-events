@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.created_events.create(name: event_params[:name],date: event_params[:date])
+    @event = current_user.events.create(event_params)
     if @event.valid?
       flash[:success] = 'Event Created'
       redirect_to controller: 'events', action: 'show', id: @event.id
@@ -28,9 +28,9 @@ class EventsController < ApplicationController
   end
 
   def invite
-    @event = Event.find_by(id: params[:data][:event_id])
+    @event = Event.find_by(id: params[:data][:attended_event_id])
     @invited = User.find(params[:id])
-    if @event.users.push(@invited)
+    if @invited.attended_events << @event
       flash[:success] = "Invitation was sent."
     else
       flash[:danger] = "There was an error to send the invitation."

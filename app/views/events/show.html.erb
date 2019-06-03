@@ -3,8 +3,8 @@
        <h2>Attendees for event:</h2>
        <h4>" <%= @event.name %> "</h4><br>
        <ul>
-          <% @event.users.each do |users| %>
-          <li><b><p><%= users.name %></p></b></li>
+          <% @event.attendees.each do |attendee| %>
+          <li><b><p><%= attendee.name %></p></b></li>
            <% end %>
        </ul>
       </div>

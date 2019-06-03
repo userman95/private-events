@@ -4,14 +4,10 @@
   </div>
   <div class="col-md-6 text-right">
     <h2> Previous </h2>
-      <% @previous_events.each do |eofa| %>
-        <p><b><%= link_to eofa.name ,event_path(eofa)%></b></p><br>
-      <% end %>
+      <%= render partial: 'shared/scheduled_events', locals: {scheduled_events: @previous_events} %>
   </div>
   <div class="col-md-6 ">
     <h2> Upcoming </h2>
-      <% @upcoming_events.each do |eofa| %>
-        <p><b><%= link_to eofa.name ,event_path(eofa)%></b></p><br>
-      <% end %>
+    <%= render partial: 'shared/scheduled_events', locals: {scheduled_events: @upcoming_events} %>
   </div>
 </div>

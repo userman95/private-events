@@ -1,6 +1,6 @@
-<% if !@event.users.exists?(id: user.id) && current_user.id != user.id %>
+<% if !@event.attendees.exists?(id: user.id) && current_user.id != user.id %>
     <li id="available-users">
       <span id="name-align"><%= user.name %></span>
-      <%= button_to( "Invite", action: 'invite', id: user.id, data: { event_id: @event.id }) %>
+      <%= button_to( "Invite", action: 'invite', id: user.id, data: { attended_event_id: @event.id }) %>
     </li>
 <% end %>
