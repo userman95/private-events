@@ -17,10 +17,9 @@ class UsersController < ApplicationController
 
 #Show the current user's events (upcoming and pervious columns)
   def show
-    if current_user
-      @upcoming_events = current_user.get_upcoming
-      @previous_events = current_user.get_previous
-    end
+    @user = User.find(params[:id])
+    @upcoming_events = @user.get_upcoming
+    @previous_events = @user.get_previous
   end
 
   private
