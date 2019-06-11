@@ -1,24 +1,42 @@
-# README
+# Private Events Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Social website to create events and invite other users
 
-Things you may want to cover:
+## Concepts Applied Here
 
-* Ruby version
+* Association
+* Validation
+* Authentication
 
-* System dependencies
+## Database Diagram
 
-* Configuration
+![Database diagram](https://github.com/userman95/private-events/blob/develop/public/db_diagram.png)
 
-* Database creation
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+Clone repository:
+```
+git clone <repository path>
+```
+Move to folder and install dependencies
+```
+cd members_ony && bundle install
+```
+Migrate database
+```
+rails db:migrate
+```
+Run web server
+```
+rails s
+```
+Finally go to `http://localhost:3000/` in the web browser
 
-* Services (job queues, cache servers, search engines, etc.)
+## Ruby Version
+* 2.5.3
 
-* Deployment instructions
+## Contributors
 
-* ...
+* [Orestis Kaplanis](https://github.com/userman95)
+* [Efrain Pinto](https://github.com/efrapp)
