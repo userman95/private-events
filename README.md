@@ -21,7 +21,7 @@ git clone git@github.com:userman95/private-events.git
 ```
 Move to folder and install dependencies
 ```
-cd members_ony && bundle install
+cd private-events && bundle install
 ```
 Migrate database
 ```
