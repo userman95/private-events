@@ -17,7 +17,7 @@ Social website to create events and invite other users
 
 Clone repository:
 ```
-git clone <repository path>
+git clone git@github.com:userman95/private-events.git
 ```
 Move to folder and install dependencies
 ```
